@@ -10,5 +10,5 @@
 FROM ubuntu:15.04
 MAINTAINER manuel.bessler@gmail.com
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -q && apt-get install -y gnucash
-ENTRYPOINT ["/usr/bin/gnucash"]
+RUN apt-get update -q && apt-get install -y gnucash dbus-x11
+ENTRYPOINT ["/usr/bin/gnucash", "--logto", "stderr"]
